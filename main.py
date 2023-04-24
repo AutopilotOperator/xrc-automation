@@ -35,9 +35,9 @@ while True:
     start = time.time()
     Rbot = open('myRobot.txt', 'rt')
     Gme = open('GameElements.txt', 'rt')
-    Output = open('Controls.txt', 'r')
-    # print(Output.read())
-    Output.close()
+    # Output = open('Controls.txt', 'r')
+    # # print(Output.read())
+    # Output.close()
     try:
         Robot = json.load(Rbot)
         Game = json.load(Gme)
@@ -62,6 +62,7 @@ while True:
     '''
     input_map = input.map_user_input()
     if input_map == {}: continue
+
     control_str = utils.generate_control_input(**input_map)
 
     # print(control_str)
