@@ -82,8 +82,9 @@ while True:
         input_map = auto.auto_main(time_left, Robot, match_info, Game)
     else:
         input_map = input.map_user_input()
-        print('\rx=%s y=%s rot=%s dright=%s' % (
-            round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1]),input_map['dpad_right']), end='', flush=True)
+
+    print('\rx=%s y=%s rot=%s' % (
+        round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)
 
     if input_map == {}: continue
 
