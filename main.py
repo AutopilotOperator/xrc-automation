@@ -6,6 +6,7 @@ import utils
 import auto
 import input
 import pygame
+import sys
 
 pygame.init()
 
@@ -68,6 +69,8 @@ while True:
     RAngle = Robot['myrobot'][1]['global rot']
     RRotV = Robot['myrobot'][1]['rot velocity']
 
+
+
     
     '''
     #Writes to the controls text file
@@ -76,13 +79,16 @@ while True:
 
 
     if "AUTO" in match_state:
-        input_map = auto.get_auto_input(time_left)
+        input_map = auto.auto_main(time_left, Robot, match_info, Game)
     else:
         input_map = input.map_user_input()
+        print('\rx=%s y=%s rot=%s dright=%s' % (
+            round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1]),input_map['dpad_right']), end='', flush=True)
 
     if input_map == {}: continue
 
     control_str = utils.generate_control_input(**input_map)
+
 
     # print(control_str)
     Controls.write(control_str)
