@@ -3,6 +3,7 @@ import math as m
 import json
 import time
 import utils
+import auto
 import input
 import pygame
 
@@ -19,6 +20,7 @@ Key = True
 
 current_direction = ""
 
+
 joysticks = []
 
 # for al the connected joysticks
@@ -33,16 +35,27 @@ for i in range(0, pygame.joystick.get_count()):
 
 while True:
     start = time.time()
-    Rbot = open('myRobot.txt', 'rt')
-    Gme = open('GameElements.txt', 'rt')
+
+    robot = open('myRobot.txt', 'rt')
+    game_elements = open('GameElements.txt', 'rt')
+    match_info = open('GAME_STATE.txt', 'rt')
     # Output = open('Controls.txt', 'r')
     # # print(Output.read())
     # Output.close()
+
+    
     try:
-        Robot = json.load(Rbot)
-        Game = json.load(Gme)
+        Robot = json.load(robot)
+        Game = json.load(game_elements)
         
-    except:
+        match_state = match_info.readline()
+        time_left = match_info.readline()
+        time_left = time_left.split('=')[1]
+        time_left = float(time_left)
+
+        
+    except Exception as e:
+        # print(e)
         continue
 
     Controls = open('Controls.txt', 'w')
@@ -60,7 +73,13 @@ while True:
     #Writes to the controls text file
     Controls.write()
     '''
-    input_map = input.map_user_input()
+
+
+    if "AUTO" in match_state:
+        input_map = auto.get_auto_input(time_left)
+    else:
+        input_map = input.map_user_input()
+
     if input_map == {}: continue
 
     control_str = utils.generate_control_input(**input_map)

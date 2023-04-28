@@ -20,17 +20,17 @@ def map_user_input():
         input_map['left_x'] = 0
 
 
-    if keyboard.is_pressed('+'):
+    if keyboard.is_pressed('-'):
         input_map['trigger_l'] = -1
-    elif keyboard.is_pressed('-'):
+    elif keyboard.is_pressed('+'):
         input_map['trigger_l'] = 1
     else:
         input_map['trigger_l'] = 0
 
 
-    if keyboard.is_pressed('-'):
+    if keyboard.is_pressed('+'):
         input_map['trigger_r'] = -1
-    elif keyboard.is_pressed('+'):
+    elif keyboard.is_pressed('-'):
         input_map['trigger_r'] = 1
     else:
         input_map['trigger_r'] = 0
@@ -99,7 +99,7 @@ def map_user_input():
             input_map['dpad_right'] = 0
     d_pad()
 
-    
+
     if keyboard.is_pressed('num 5'):
         input_map['a'] = 1
     else: 
