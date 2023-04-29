@@ -3,7 +3,7 @@ import math as m
 import json
 import time
 import utils
-import auto
+from auto import main as auto_main
 import input
 import pygame
 import sys
@@ -79,12 +79,17 @@ while True:
 
 
     if "AUTO" in match_state:
-        input_map = auto.auto_main(time_left, Robot, match_info, Game)
+        input_map = auto_main.auto_main(time_left, Robot, match_info, Game)
     else:
         input_map = input.map_user_input()
 
     # print('\rx=%s y=%s rot=%s' % (
     #     round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)
+
+    if keyboard.is_pressed('}'):
+        input_map['restart'] = 1
+    else:
+        input_map['restart'] = 0
 
     if input_map == {}: continue
 
@@ -103,6 +108,8 @@ while True:
 
     # Controls.write('left_y='+current_direction)
     #Prints for debugging
+
+    
 
     if keyboard.is_pressed('`'):
         break
