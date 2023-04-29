@@ -11,10 +11,12 @@ auto_config = [
     {'location': {'x': -2.93, 'y': -6.36, 'angle': 90},  # go to grid
      'controls': {'trigger_l': 0 ,'trigger_r':0, 'dpad_down': 1},
      'timeout': 1500},
-    {'location': {'x': -2.93, 'y': -6.36, 'angle': 90},
+    {'location': {'x': -2.93, 'y': -6.36, 'angle': 90, 'precise': False},
      'controls': {'dpad_down': 0, 'dpad_right': 1}},  # go to grid
-    {'controls': {'a': 1, 'left_x':0,'left_y':0,'right_x':0, 'dpad_right':0},  # One loop cycle to release the cube
-     'timeout': 100},
+    {'controls': {'left_x':0,'left_y':0,'right_x':0, 'dpad_right':0},
+     'timeout':100},
+    {'controls': {'a': 1},  # One loop cycle to release the cube
+     'timeout': 50},
 
     {'location': {'x': -3.147, 'y': -5.89, 'angle': 150, 'precise': False},
      'controls': {'dpad_down': 1, 'a':0}},
