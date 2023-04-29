@@ -3,6 +3,7 @@ from autos import helper
 auto_index = 0
 auto_ended = True
 auto_config = [
+    {'timeout':200},
     {'location': {'x': -3.132, 'y': -1.747, 'angle': 270},  # go to cube
      'controls': {'trigger_r': -1, 'trigger_l': 1}},  # Goes to pick up the left cube
     {'controls': {'left_y':-0.17},
