@@ -83,8 +83,8 @@ while True:
     else:
         input_map = input.map_user_input()
 
-    print('\rx=%s y=%s rot=%s' % (
-        round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)
+    # print('\rx=%s y=%s rot=%s' % (
+    #     round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)
 
     if input_map == {}: continue
 
