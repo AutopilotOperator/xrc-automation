@@ -5,3 +5,14 @@
 /template.txt
 /__pycache__
 
+auto/__pycache__/__init__.cpython-310.pyc
+auto/__pycache__/eyalTest.cpython-310.pyc
+auto/__pycache__/helper.cpython-310.pyc
+auto/__pycache__/logic.cpython-310.pyc
+auto/__pycache__/main.cpython-310.pyc
+auto/__pycache__/nathanTimeThing.cpython-310.pyc
+auto_configs/__pycache__/eyal_red_left.cpython-310.pyc
+auto_configs/__pycache__/eyal.cpython-310.pyc
+auto_configs/__pycache__/nathan_red_left.cpython-310.pyc
+auto_configs/__pycache__/nathan_red_right_one.cpython-310.pyc
+auto_configs/__pycache__/nathan_red_right.cpython-310.pyc
