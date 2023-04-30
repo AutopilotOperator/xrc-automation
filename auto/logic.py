@@ -1,6 +1,5 @@
 from auto import helper
 from auto_configs import nathan_red_right_one
-
 auto_index = 0
 auto_ended = True
 auto_config =  nathan_red_right_one.auto_config
