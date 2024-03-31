@@ -34,10 +34,7 @@ def map_user_input():
         input_map['trigger_r'] = 1
     else:
         input_map['trigger_r'] = 0
-        
-
-
-
+    
 
     if keyboard.is_pressed('e'):
         input_map['right_x'] = -1
@@ -46,6 +43,10 @@ def map_user_input():
     else:
         input_map['right_x'] = 0
 
+    if keyboard.is_pressed('i'):
+        input_map['x'] = 1
+    else:
+        input_map['x'] = 0
     
     def d_pad():
         if keyboard.is_pressed('up'):

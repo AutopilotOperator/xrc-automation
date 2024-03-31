@@ -7,6 +7,7 @@ from auto import main as auto_main
 import input
 import pygame
 import sys
+from robot import Robot
 
 pygame.init()
 
@@ -33,6 +34,8 @@ for i in range(0, pygame.joystick.get_count()):
     # print a statement telling what the name of the controller is
     print ("Detected joystick "),joysticks[-1].get_name(),"'"
     Controller = True
+
+robot_obj =  Robot()
 
 while True:
     start = time.time()
@@ -62,9 +65,9 @@ while True:
     Controls = open('Controls.txt', 'w')
 
     #grabs positions
-    # print(Robot['myrobot'][0])
     # print('Is it working?')
     RPos = Robot['myrobot'][1]['global pos']
+    # print(RPos)
     RVol = Robot['myrobot'][1]['velocity']
     RAngle = Robot['myrobot'][1]['global rot']
     RRotV = Robot['myrobot'][1]['rot velocity']
@@ -81,7 +84,8 @@ while True:
     if "AUTO" in match_state:
         input_map = auto_main.auto_main(time_left, Robot, match_info, Game)
     else:
-        input_map = input.map_user_input()
+        # input_map = input.map_user_input()
+        input_map = robot_obj.get_controls(RPos, RAngle, time_left)
 
     # print('\rx=%s y=%s rot=%s' % (
     #     round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)

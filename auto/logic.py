@@ -1,8 +1,8 @@
 from auto import helper
-from auto_configs import nathan_red_right_one
+from auto_configs import MiniDrone
 auto_index = 0
 auto_ended = True
-auto_config =  nathan_red_right_one.auto_config
+auto_config =  MiniDrone.auto_config
 
 def get_auto_input(time_left, robot):
     """
