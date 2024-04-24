@@ -4,7 +4,7 @@ import robot_consts
 
 auto_config = [
     {'timeout': 400},
-    {'location': {'x': 0.583, 'y': -1.929, 'angle': 270}, 'controls':  robot_consts.LOWER_ELEVATOR},
+    {'location': {'x': 0.583, 'y': -1.929, 'angle': 270, 'precise': True}, 'controls':  robot_consts.LOWER_ELEVATOR},
     {'timeout': 100, 'controls': robot_consts.INTAKE_POS | robot_consts.STOP_ELEVATOR },
     {'location': {'x': 0.436, 'y': -5.437, 'angle': 90}}, # go to cube
     {'location': {'x': 0.436, 'y': -5.937, 'angle': 90}, 'controls': robot_consts.HIGH_SCORING_POS}, # go to cube

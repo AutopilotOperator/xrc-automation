@@ -36,9 +36,9 @@ def map_user_input():
         input_map['trigger_r'] = 0
     
 
-    if keyboard.is_pressed('e'):
+    if keyboard.is_pressed('k'):
         input_map['right_x'] = -1
-    elif keyboard.is_pressed('q'):
+    elif keyboard.is_pressed(';'):
         input_map['right_x'] = 1
     else:
         input_map['right_x'] = 0

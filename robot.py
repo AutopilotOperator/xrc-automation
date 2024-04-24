@@ -21,7 +21,6 @@ class Robot:
         self.update_params(pos, rot, time_left)
         user_input = input.map_user_input()
         user_input['x'] = 1 
-
         if keyboard.is_pressed('o') and self.is_releasing == False:
                 self.is_releasing = True
                 self.release_timeout = self.time_left - 500

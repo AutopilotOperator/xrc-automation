@@ -13,7 +13,7 @@ def get_auto_input(time_left, robot):
     """
     global auto_ended
     global auto_index
-    print('\rauto index=%s' % (auto_index), end='', flush=True)
+    # print('\rauto index=%s' % (auto_index), end='', flush=True)
     if time_left > 149998:
         # auto.reset()
         auto_ended = False
@@ -23,7 +23,6 @@ def get_auto_input(time_left, robot):
         return {}
     if auto_index >= len(auto_config):
         return {'left_x': 0, 'left_y': 0, 'right_x': 0}
-
     finished_step = False
     controls_output = {}
     if 'controls' in auto_config[auto_index]:
