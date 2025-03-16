@@ -8,3 +8,6 @@ INTAKE_POS = {'dpad_left': 0,'dpad_up': 0, 'dpad_down': 1, 'dpad_right': 0}
 
 CHARGE_SHOOTER = {'x': 1}
 RELEASE_SHOOTER = {'x': 0}
+
+
+INTAKE_POS = {'dpad_left': 0,'dpad_up': 0, 'dpad_down': 1, 'dpad_right': 0}

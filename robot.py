@@ -8,6 +8,7 @@ class Robot:
         self.time_left = 0
         self.release_timeout = 0
         self.is_releasing = False
+        self.prev_value = {}
 
 
 
@@ -17,10 +18,11 @@ class Robot:
         self.time_left = time_left
 
 
-    def get_controls(self, pos, rot, time_left):
+    def get_controls(self, pos, rot, time_left, joysticks):
         self.update_params(pos, rot, time_left)
-        user_input = input.map_user_input()
-        user_input['x'] = 1 
+
+        user_input = input.map_user_input(joysticks, self.prev_value)
+        self.prev_value = user_input
         if keyboard.is_pressed('o') and self.is_releasing == False:
                 self.is_releasing = True
                 self.release_timeout = self.time_left - 500

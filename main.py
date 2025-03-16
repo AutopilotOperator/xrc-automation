@@ -43,6 +43,9 @@ while True:
     robot = open('myRobot.txt', 'rt')
     game_elements = open('GameElements.txt', 'rt')
     match_info = open('GAME_STATE.txt', 'rt')
+    
+
+
     # Output = open('Controls.txt', 'r')
     # # print(Output.read())
     # Output.close()
@@ -72,6 +75,7 @@ while True:
     RAngle = Robot['myrobot'][1]['global rot']
     RRotV = Robot['myrobot'][1]['rot velocity']
 
+    # print(f'{RPos} {RAngle}' , end='\r')
 
 
     
@@ -82,10 +86,12 @@ while True:
 
 
     if "AUTO" in match_state:
-        input_map = auto_main.auto_main(time_left, Robot, match_info, Game)
+        # input_map = auto_main.auto_main(time_left, Robot, match_info, Game)
+        input_map = robot_obj.get_controls(RPos, RAngle, time_left, joysticks)
+
     else:
         # input_map = input.map_user_input()
-        input_map = robot_obj.get_controls(RPos, RAngle, time_left)
+        input_map = robot_obj.get_controls(RPos, RAngle, time_left, joysticks)
 
     # print('\rx=%s y=%s rot=%s' % (
     #     round(RPos[0], 3), round(RPos[2], 3), round(RAngle[1])), end='', flush=True)
@@ -102,18 +108,6 @@ while True:
 
     # print(control_str)
     Controls.write(control_str)
-
-
-    # if (keyboard.is_pressed('w')):
-    #     current_direction = '1'
-    # if (keyboard.is_pressed('s')):
-    #     current_direction = '-1'
-
-
-    # Controls.write('left_y='+current_direction)
-    #Prints for debugging
-
-    
 
     if keyboard.is_pressed('`'):
         break
